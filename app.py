@@ -46,7 +46,7 @@ if fl is not None:
     st.write(filename)
     df = pd.read_csv(filename, encoding = "ISO-8859-1")
 else:
-    os.chdir("https://github.com/mohamadkamel010/interactive_dashboard/blob/main/data_sales.csv")
+    os.chdir("https://github.com/mohamadkamel010/interactive_dashboard/blob/94de7b8bf7dc55c0500ebecf764e745a4f771c23/data_sales.csv")
     df = pd.read_csv("data_sales.csv", encoding = "ISO-8859-1")
 
 
