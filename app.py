@@ -46,8 +46,8 @@ if fl is not None:
     st.write(filename)
     df = pd.read_csv(filename, encoding = "ISO-8859-1")
 else:
-    os.open("https://github.com/mohamadkamel010/interactive_dashboard/blob/94de7b8bf7dc55c0500ebecf764e745a4f771c23/data_sales.csv")
-    df = pd.read_csv("data_sales.csv", encoding = "ISO-8859-1")
+    url = "https://raw.githubusercontent.com/mohamadkamel010/interactive_dashboard/refs/heads/main/data_sales.csv"
+    df = pd.read_csv(url, encoding = "ISO-8859-1")
 
 
 df['Order Date'] = pd.to_datetime(df['Order Date'])
