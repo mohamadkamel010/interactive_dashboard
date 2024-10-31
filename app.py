@@ -286,7 +286,7 @@ col11,col12 = st.columns((2))
 
 html_footer = """
 <footer>
-  <p>Author: Mohammed Kamel A.Haliem</p>
+  <p>Content By: Mohammed Kamel A.Haliem</p>
   <p><a href="mailto:mohamad.kamel013@gmail.com">mohamad.kamel013@gmail.com</a></p>
 </footer>"""
 
