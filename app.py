@@ -12,9 +12,33 @@ import os
 import warnings
 warnings.filterwarnings('ignore')
 
-st.set_page_config(page_title="SuperStore!!!", page_icon=":bar_chart:",layout="wide")
+st.set_page_config(page_title="Extra Hyper Market!!!", page_icon=":bar_chart:",layout="wide")
 
-st.title(":bar_chart: :blue[SuperStore Interactive Sales Dashboard]")   
+image = Image.open('extra.jpg')
+
+colx, coly = st.columns([0.1,0.9])
+
+with colx:
+    st.image(image,width=100)
+
+html_title = """
+    <style>
+    .title-test {
+    font-weight:bold;
+    text-align: center;
+    background-color: #abbaba;
+    color:blue;
+    padding:10px;
+    border-radius:6px;
+    height: 100px;
+    }
+    </style>
+    <center><h1 class="title-test">Extra Interactive Sales Dashboard</h1></center>"""
+
+with coly:
+    st.markdown(html_title, unsafe_allow_html=True)
+    # st.title(":bar_chart: :blue[Extra Interactive Sales Dashboard]")
+      
 
 fl = st.file_uploader(":file_folder: Upload a file",type=(["csv","txt","xlsx","xls"]))
 if fl is not None:
@@ -22,8 +46,8 @@ if fl is not None:
     st.write(filename)
     df = pd.read_csv(filename, encoding = "ISO-8859-1")
 else:
-    url = "https://raw.githubusercontent.com/mohamadkamel010/interactive_dashboard/refs/heads/main/data_sales.csv"
-    df = pd.read_csv(url, encoding = "ISO-8859-1")
+    os.chdir("D:\Programming\Machnine Learning Projects\EDA\BigMart_Sales\interactive_app_danube")
+    df = pd.read_csv("data_sales.csv", encoding = "ISO-8859-1")
 
 
 df['Order Date'] = pd.to_datetime(df['Order Date'])
@@ -286,9 +310,10 @@ col11,col12 = st.columns((2))
 
 html_footer = """
 <footer>
-  <p>Content By: Mohammed Kamel A.Haliem</p>
+  <p>Author: Mohammed Kamel A.Haliem</p>
   <p><a href="mailto:mohamad.kamel013@gmail.com">mohamad.kamel013@gmail.com</a></p>
 </footer>"""
 
 with col11:
     st.markdown(html_footer, unsafe_allow_html=True)
+
